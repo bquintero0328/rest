@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 15, 2016 at 04:32 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Servidor: localhost
+-- Tiempo de generación: 13-03-2020 a las 04:34:30
+-- Versión del servidor: 8.0.13-4
+-- Versión de PHP: 7.2.24-0ubuntu0.18.04.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,53 +19,74 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `slimapp`
+-- Base de datos: `00C3EkJLPr`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Estructura de tabla para la tabla `customers`
 --
 
 CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `city` varchar(255) NOT NULL,
-  `state` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Id` int(11) NOT NULL,
+  `First_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `City` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `customers`
+-- Volcado de datos para la tabla `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `phone`, `email`, `address`, `city`, `state`) VALUES
-(2, 'Sam', 'Smith', '333-333-3333', 'ssmith@yahoo.com', '33 Birch Rd', 'Miami', 'FL'),
-(3, 'Brad', 'Traversy', '333-333-3333', 'brad@test.com', '333 South st', 'Portland', 'ME');
+INSERT INTO `customers` (`Id`, `First_name`, `Last_name`, `Phone`, `Email`, `Address`, `City`, `Date`) VALUES
+(0, 'juan', 'pedro', '3033356201', 'pedro@gmai.com', 'calle 69 sur N 29 - 30', 'Bogota', '2020-03-11 02:00:00'),
+(1, 'camilo', 'pedro', '356289456', 'Camilo@gmai.com', 'calle 78 sur N 29 - 30', 'medellin', '2020-03-11 02:22:00');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Estructura de tabla para la tabla `products`
+--
+
+CREATE TABLE `products` (
+  `Id` int(11) NOT NULL,
+  `Meat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Chicken` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Potatoes` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Milk` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`Id`, `Meat`, `Chicken`, `Potatoes`, `Milk`, `Date`) VALUES
+(0, '100kg', '20kg', '70kg', '50l', '2020-03-09'),
+(1, '300kg', '200kg', '100kg', '100l', '2020-03-10');
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `customers`
+-- Indices de la tabla `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indices de la tabla `products`
 --
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`Id`);
+COMMIT;
 
---
--- AUTO_INCREMENT for table `customers`
---
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
