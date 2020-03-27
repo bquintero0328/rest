@@ -1,7 +1,7 @@
 <?php
     class db{
         // Properties
-        private $dbhost = 'https://remotemysql.com/phpmyadmin/db_structure.php?db=00C3EkJLPr';
+        private $dbhost = 'remotemysql.com';
         private $dbuser = '00C3EkJLPr';
         private $dbpass = '15tsM0343D';
         private $dbname = '00C3EkJLPr';
